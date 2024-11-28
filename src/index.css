@@ -27,6 +27,9 @@ user-select: none;
 
 }
 
+body{
+  overflow-x: hidden;
+}
 
 #logo{
   margin-left: 50px;

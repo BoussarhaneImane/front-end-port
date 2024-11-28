@@ -4,6 +4,7 @@ import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiHtml5, SiCss3, SiJavascri
 import { DiScrum } from 'react-icons/di';
 import { FaFilePowerpoint } from "react-icons/fa6";
 import { TbFileTypeXml } from "react-icons/tb";
+import Animate from '../animate';
 
 const services = [
   {
@@ -63,13 +64,14 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-slate-900 text-gray-200 py-12 px-4 sm:px-6 md:px-12">
+    <div className="bg-slate-950 text-gray-200 mt-28  py-12 px-4 sm:px-6 md:px-12">
       {/* Header Section */}
+      <Animate/>
       <div data-aos="fade-up"
                       data-aos-duration="1500"
                       data-aos-once="true"  className="text-center mb-12">
-        <h2  className="text-3xl sm:text-4xl font-bold text-pink-600">My Services</h2>
-        <p className="mt-4  text-base sm:text-lg">I provide a variety of services in web development, project management, design, and more.</p>
+        <h2  className="text-3xl sm:text-4xl font-bold text-violet-600">Our Services</h2>
+        <p className="mt-4 text-gray-400   text-base sm:text-sm ">Our team offers a wide range of professional services, including web development, project management,<br></br> innovative design solutions, and much more to bring your ideas to life.</p>
       </div>
 
       {/* Services Grid */}
@@ -80,7 +82,8 @@ const Services = () => {
           data-aos-duration="1100"
           data-aos-once="true"
             key={index}
-            className={`bg-slate-800 p-6 rounded-lg shadow-lg hover:scale-105 cursor-pointer transition-transform duration-300 ${service.centered ? 'col-span-full mx-auto' : ''}`}
+            className={`bg-violet-800  p-6 rounded-lg  hover:scale-105 cursor-pointer transition-transform duration-300 ${service.centered ? 'col-span-full mx-auto' : ''}`}
+            style={{boxShadow:' 10px 10px rgba(228, 228, 231, 0.8)'}}
           >
             <div className="text-slate-950 mb-4" style={{ fontSize: '5rem' }}>
               {service.icon}
@@ -89,7 +92,7 @@ const Services = () => {
             <p className="text-sm mb-4">{service.description}</p>
             <div className="flex flex-wrap gap-4 text-3xl">
               {service.technologies.map((tech, i) => (
-                <span key={i} className="text-pink-600">{tech}</span>
+                <span key={i} className="text-slate-950">{tech}</span>
               ))}
             </div>
           </div>
@@ -100,7 +103,7 @@ const Services = () => {
       <div className="text-center mt-12">
         <a
           href="#contact"
-          className="inline-block px-6 py-3 bg-pink-600 text-white font-bold rounded-full shadow-lg hover:bg-pink-700 transition duration-300"
+          className="inline-block px-6 py-3 bg-violet-700 text-white font-bold rounded-full shadow-lg  transition duration-300"
         >
           Let’s Work Together
         </a>

@@ -6,34 +6,41 @@ import Modal from './Modal';
 import ContactForm from './ContactForm';
 import logo from './logoo.png'
 import './Nav.css'
+import '../Hero.css'
 const Navbar = () => {
-  const location = useLocation();
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isSearchHovered, setIsSearchHovered] = useState(false);
-  const [userName, setUserName] = useState('');
-  const [isModalVisible, setIsModalVisible] = useState(false); // Ajout de l'état pour la modale
+
+  const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const storedUserName = localStorage.getItem('userName');
-    if (storedUserName) {
-      setUserName(storedUserName);
-    }
-  }, [userName]);
+    // Générer des étoiles dynamiques
+    const generateStars = () => {
+      const starArray = [];
+      for (let i = 0; i < 50; i++) {
+        const size = Math.random() * 3 + 2; // Taille aléatoire entre 1px et 4px
+        starArray.push({
+          id: i,
+          top: Math.random() * 100 + "%", // Position verticale aléatoire
+          left: Math.random() * 100 + "%", // Position horizontale aléatoire
+          size,
+          delay: Math.random() * 5, // Délai aléatoire
+        });
+      }
+      setStars(starArray);
+    };
+
+    generateStars();
+  }, []);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const [isModalVisible, setIsModalVisible] = useState(false); // Ajout de l'état pour la modale
 
   
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleSearchHover = () => {
-    setIsSearchHovered(!isSearchHovered);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('userName');
-    setUserName('');
-  };
 
   const handleOrderPopup = () => {
     setIsModalVisible(true); 
@@ -44,7 +51,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-slate-950  text-gray-200 shadow-md p-3 font-medium sm:h-32">
+    <nav className="fixed z-50 top-0 left-0 right-0  bg-slate-950  text-gray-200  p-3 font-medium sm:h-28 ">
+      <div className="absolute inset-0 z-0">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute bg-slate-300 rounded-full opacity-80 animate-twinkle"
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              top: star.top,
+              left: star.left,
+              animationDelay: `${star.delay}s`,
+            }}
+          ></div>
+        ))}
+      </div>
     <div className="max-w-7xl mx-auto px-4 sm:px-7 lg:px-8">
       <div className="flex items-center justify-between h-16">
         <div className="flex items-center" id="logo">
@@ -54,7 +76,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className=" logo h-20 w-36 ml-0  sm:h-60  mt-4  object-cover"
+                className=" logo h-20 w-36 ml-0  sm:h-44  mt-4  object-cover"
              
               />
           

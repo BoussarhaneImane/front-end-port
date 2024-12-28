@@ -4,5 +4,46 @@
        
 }
 
+.backdrop-blur-md {
+    
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.3); /* Optionnel pour tester */
+    }
+    
+    .cont{
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0); /* Optionnel pour tester */
+    }    
       
-   
+.img{
+    position: relative;
+    bottom: 1rem;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }
+ 
+  @media (max-width: 480px) {
+    /* Styles pour les écrans de 480px ou moins */
+    .imgS{
+      position: relative;
+      right: 3rem;
+    }
+  }
+  

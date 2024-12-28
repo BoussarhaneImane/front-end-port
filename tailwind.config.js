@@ -19,6 +19,16 @@ export default {
           sm: "3rem",
         },
       },
+      keyframes: {
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(50deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+      },
+      animation: {
+        wave: "wave 1.2s infinite",
+      },
     },
   },
   plugins: [],

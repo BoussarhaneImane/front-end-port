@@ -1,11 +1,8 @@
-import React  from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FaMobileAlt, FaFacebook, FaInstagram, FaLinkedin, FaEnvelope, FaGithub, FaWhatsapp } from "react-icons/fa";
-import afuqLogo from "../Navbar/logoo.png"; 
-import './footer.css'
-import '../Hero.css'
+import imgImane from '../IMANEBOU.jpg';
+import './footer.css';
 
 const FooterLinks = [
   { title: "Home", path: "/" },
@@ -15,66 +12,31 @@ const FooterLinks = [
 ];
 
 const Footer = () => {
-  const [stars, setStars] = useState([]);
-
-  useEffect(() => {
-    // Générer des étoiles dynamiques
-    const generateStars = () => {
-      const starArray = [];
-      for (let i = 0; i < 400; i++) {
-        const size = Math.random() * 3 + 2; // Taille aléatoire entre 1px et 4px
-        starArray.push({
-          id: i,
-          top: Math.random() * 100 + "%", // Position verticale aléatoire
-          left: Math.random() * 100 + "%", // Position horizontale aléatoire
-          size,
-          delay: Math.random() * 5, // Délai aléatoire
-        });
-      }
-      setStars(starArray);
-    };
-
-    generateStars();
-  }, []);
   return (
-
-    <div className="bg-slate-950 text-gray-300 font-medium pt-24">
- <div className="absolute inset-0 z-0" style={{height:'98rem'}}>
-        {stars.map((star) => (
-          <div
-            key={star.id}
-            className="absolute bg-slate-300 rounded-full opacity-80 animate-twinkle"
-            style={{
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              top: star.top,
-              left: star.left,
-              animationDelay: `${star.delay}s`,
-            }}
-          ></div>
-        ))}
-      </div>
+    <div className="relative bg-gradient-to-br from-indigo-950 to-gray-900 py-10 overflow-hidden text-gray-300 font-medium pt-24">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-10 py-10">
-          {/* Company Details */}
-          <div className="cont">
-            <div className="flex items-center mb-4 ml-0" id="logo">
-              <img src={afuqLogo} alt="Afuq Digital"  />
-             
+          {/* Détails personnels */}
+          <div>
+            <div className="h-16 w-16 mt-2 sm:h-20 sm:w-20 ml-4  rounded-full overflow-hidden border-4 border-slate-200 contt mb-2">
+              <img
+                src={imgImane}
+                alt="Boussarhane Imane"
+                className="h-full w-full object-cover"
+              />
             </div>
             <p className="text-sm mb-4 text-center">
-              We are a creative team of developers delivering professional solutions to elevate your brand. Together, we build innovative, scalable, and visually stunning digital experiences.
+              I am a passionate developer, dedicated to creating innovative, scalable, and visually stunning digital solutions for personal and professional growth.
             </p>
-           
           </div>
 
-          {/* Quick Links */}
+          {/* Liens rapides */}
           <div className="py-8 px-4">
-            <h1 className="text-xl font-bold mb-3 text-slate-500">Quick Links</h1>
+            <h1 className="text-xl font-bold mb-3 text-slate-200">Quick Links</h1>
             <ul className="space-y-3">
               {FooterLinks.map((data, index) => (
                 <li key={index}>
-                  <Link to={data.path} className="hover:text-gray-300 duration-300">
+                  <Link to={data.path} className="text-gray-300 hover:text-pink-900 duration-300">
                     {data.title}
                   </Link>
                 </li>
@@ -82,45 +44,45 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Information */}
+          {/* Contact */}
           <div className="py-8 px-4">
-            <h1 className="text-xl font-bold mb-3 text-slate-500">Get in Touch</h1>
+            <h1 className="text-xl font-bold mb-3 text-slate-200">Get in Touch</h1>
             <div>
               <p className="text-sm mb-4">
-                Afuq Digital, bringing your digital ideas to life. Contact us for exceptional solutions tailored to your business needs.
+                Feel free to reach out for collaborations or inquiries. I am eager to contribute to meaningful projects.
               </p>
               <div className="flex items-center gap-2 mb-4">
-                <FaMobileAlt className="text-2xl hover:text-slate-500 duration-300" />
-                <p className="text-lg">+212 649 009 048</p>
+                <FaMobileAlt className="text-2xl cursor-pointer hover:text-pink-900 duration-300" />
+                <p className="text-lg">+212 632-409738</p>
               </div>
-              {/* Social Links */}
+              {/* Liens sociaux */}
               <div className="flex space-x-4">
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="https://www.instagram.com/boussarhane_imane" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
-                <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <FaFacebook className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="https://www.facebook.com/profile.php?id=100084314748068&locale=fr_FR" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="https://www.linkedin.com/in/boussarhane-imane-bb1178298/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
-                <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="https://github.com/BoussarhaneImane" target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
-                <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="https://wa.me/212632409738" target="_blank" rel="noopener noreferrer">
+                  <FaWhatsapp className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
-                <a href="mailto:your.email@example.com">
-                  <FaEnvelope className="text-2xl hover:text-slate-500 duration-300" />
+                <a href="mailto:boussarhaneimane@gmail.com">
+                  <FaEnvelope className="text-2xl hover:text-pink-900 duration-300" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <footer className="text-center py-4 text-slate-500 font-medium text-sm">
-          &copy; 2024 Afuq Digital - Developed by Boussarhane Imane  and EL Mouissi Mohamed. All Rights Reserved.
+        {/* Bas de page */}
+        <footer className="text-center py-4 text-slate-200 font-medium text-sm">
+          &copy; 2024 Boussarhane Imane. All Rights Reserved.
         </footer>
       </div>
     </div>

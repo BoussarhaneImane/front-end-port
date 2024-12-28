@@ -11,6 +11,7 @@ import Projects from './components/Works/Projects.jsx';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Animate from './components/animate.jsx';
+import ContactForm from './components/Navbar/ContactForm.jsx';
 
 
 const App = () => {
@@ -62,7 +63,10 @@ const App = () => {
                <Navbar handleOrderPopup={handleOrderPopup} />
                <Services/>
               </>}/>
-       
+              <Route path="/ContactMe"  element={
+              <>
+           <ContactForm/>
+              </>}/>
             
         </Routes>
       </Router>

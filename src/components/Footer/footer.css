@@ -1,4 +1,6 @@
-.cont{
+@media (min-width: 1024px) {
+.contt{
         position: relative;
-        right:3rem;
+       left: 2rem;
+}
 }

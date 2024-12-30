@@ -9,7 +9,7 @@ import img5 from './t5.png';
 import img6 from './t7.png';
 import img7 from './t4.png';
 import { Link } from "react-router-dom";
-import Animate from "../animate";
+import Animate from "../Animate";
 
 import Slider from "react-slick"; 
 

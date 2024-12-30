@@ -6,7 +6,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './service.css';
-import Animate from '../animate';
+import Animate from '../Animate';
 import Animatetwo from '../Animatetwo';
 
 const Services = () => {

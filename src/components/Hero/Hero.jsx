@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import imgImane from "./VS.png";
 import vd from './projet2.mp4'
 import vd2 from './record3.mp4'
-import Animate from "../animate";
+import Animate from "../Animate";
 import  "../Navbar/Nav.css";
 import Animatetwo from "../Animatetwo";
 

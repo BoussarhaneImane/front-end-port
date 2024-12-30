@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaTimes, FaUser, FaPhone, FaRegEnvelope, FaCommentDots } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Animate from '../animate';
+import Animate from '../Animate';
 import Animatetwo from '../Animatetwo';
 
 const ContactForm = () => {

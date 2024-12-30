@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import '../Animate.css'
 import { FaLink, FaCodeBranch } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiHtml5, SiCss3, SiTailwindcss } from 'react-icons/si';
-import imgy from './t8.png';
-import img2 from './t2.png';
+import imgy from './t8.PNG';
 import img4 from './t3.png';
 import img5 from './t5.png';
 import img6 from './t7.png';

@@ -16,7 +16,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/send-email', formData)
+    axios.post('https://backend-port-6eer.onrender.com/send-email', formData)
       .then(response => {
         if (response.data.success) {
           setStatus('Message sent successfully! This number must be a WhatsApp number to contact you thank you!');
